@@ -30,16 +30,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun saveText() {
-        getPref().edit().putString("SAVED_TEXT", inputText.text.toString()).apply()
+        getPref().putString("SAVED_TEXT", inputText.text.toString())
         inputText.text.clear()
     }
 
     private fun loadText() {
-        inputText.setText(getPref().getString("SAVED_TEXT", ""))
+        inputText.setText(getPref().getString("SAVED_TEXT"))
     }
 
     private fun clearText() {
         inputText.text.clear()
-        getPref().edit().clear().apply()
+        getPref().clear()
     }
 }
