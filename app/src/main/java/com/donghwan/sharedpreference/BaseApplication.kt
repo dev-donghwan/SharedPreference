@@ -6,7 +6,7 @@ class BaseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        pref = PrefUtilImpl(this, SHARED_PREFERENCE_TAG)
+        pref = PrefUtilImpl.getInstance(this, SHARED_PREFERENCE_TAG)
     }
 
     companion object {
